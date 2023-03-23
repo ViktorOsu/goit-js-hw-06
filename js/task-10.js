@@ -20,17 +20,23 @@ let size = 30;
 function createBoxes() {
   const amount = Number(input.value);
   let boxes = '';
+  
 
   for (let i = 0; i < amount; i += 1, size += 10) {
     const boxesColor = getRandomHexColor();
     const box = `<div style="background-color:${boxesColor};width:${size}px;height:${size}px"></div>`;
     boxes += box;
   }
+  
   boxesCounter.insertAdjacentHTML('beforeend', boxes);
+  size = currentSize;
 }
+
+
 
 function destroyBoxes() {
   boxesCounter.innerHTML = '';
+  size = 30;
 }
 
 
